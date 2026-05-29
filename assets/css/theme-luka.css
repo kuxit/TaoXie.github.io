@@ -109,10 +109,30 @@ body.theme-luka .nav-container {
   justify-content: space-between;
 }
 
-body.theme-luka .nav-left a {
+body.theme-luka .nav-left {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  min-width: 0;
+}
+
+body.theme-luka .nav-brand {
   color: var(--luka-text);
   font-size: 18px;
   font-weight: 600;
+  flex-shrink: 0;
+}
+
+body.theme-luka .nav-link {
+  color: var(--luka-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+body.theme-luka .nav-link:hover {
+  color: var(--luka-accent);
 }
 
 body.theme-luka .theme-toggle {
@@ -268,6 +288,7 @@ body.theme-luka .content {
 
 body.theme-luka .section {
   margin-bottom: 44px;
+  scroll-margin-top: 84px;
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.45s ease, transform 0.45s ease;
@@ -499,6 +520,21 @@ body.theme-luka strong {
 }
 
 @media (max-width: 640px) {
+  body.theme-luka .nav-left {
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body.theme-luka .nav-left::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.theme-luka .nav-link {
+    font-size: 13px;
+  }
+
   body.theme-luka .image.avatar img {
     width: 148px;
     height: 148px;
